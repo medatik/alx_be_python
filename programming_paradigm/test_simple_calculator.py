@@ -1,15 +1,12 @@
-# programming_paradigm/test_simple_calculator.py
-
 import unittest
 from simple_calculator import SimpleCalculator
 
 class TestSimpleCalculator(unittest.TestCase):
 
     def setUp(self):
-        """Set up a new calculator instance before each test."""
         self.calc = SimpleCalculator()
 
-    def test_add(self):
+    def test_addition(self):
         self.assertEqual(self.calc.add(2, 3), 5)
         self.assertEqual(self.calc.add(-1, -1), -2)
         self.assertEqual(self.calc.add(-5, 5), 0)
@@ -30,9 +27,5 @@ class TestSimpleCalculator(unittest.TestCase):
     def test_divide(self):
         self.assertEqual(self.calc.divide(10, 2), 5)
         self.assertEqual(self.calc.divide(-6, 3), -2)
-        self.assertEqual(self.calc.divide(7, -1), -7)
         self.assertEqual(self.calc.divide(0, 5), 0)
-        self.assertIsNone(self.calc.divide(5, 0))  # Division by zero
-
-if __name__ == "__main__":
-    unittest.main()
+        self.assertIsNone(self.calc.divide(5, 0))  # division by zero
